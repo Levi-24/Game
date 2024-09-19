@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 public class PlayerController : MonoBehaviour
 {
     public Tilemap tilemap;
+    public Tilemap obstaclesTilemap; // Új Tilemap az akadályokhoz
     public float moveTime = 0.2f;
     private Vector3Int currentCell;
     private bool isMoving = false;
@@ -14,6 +15,12 @@ public class PlayerController : MonoBehaviour
         if (tilemap == null)
         {
             Debug.LogError("Tilemap is not assigned in PlayerController.");
+            return;
+        }
+
+        if (obstaclesTilemap == null)
+        {
+            Debug.LogError("Obstacles Tilemap is not assigned in PlayerController.");
             return;
         }
 
@@ -76,14 +83,21 @@ public class PlayerController : MonoBehaviour
 
     private bool IsValidTile(Vector3Int targetCell)
     {
+       
+        TileBase obstacleTile = obstaclesTilemap.GetTile(targetCell);
+        if (obstacleTile != null)
+        {
+            Debug.Log("Obstacle at position: " + targetCell);
+            return false; 
+        }
+
         TileBase tile = tilemap.GetTile(targetCell);
         if (tile == null)
         {
             return false;
         }
 
-        bool isValid = tile.name == "TestTile";
-        Debug.Log("Tile at " + targetCell + " is valid: " + isValid);
-        return isValid;
+       
+        return true;
     }
 }
