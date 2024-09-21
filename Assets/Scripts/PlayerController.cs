@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public Tilemap tilemap;
     public Tilemap obstaclesTilemap; // Új Tilemap az akadályokhoz
-    public float moveTime = 0.2f;
+    public float moveTime = 0.3f;
     private Vector3Int currentCell;
     private bool isMoving = false;
 
@@ -83,12 +83,12 @@ public class PlayerController : MonoBehaviour
 
     private bool IsValidTile(Vector3Int targetCell)
     {
-       
+
         TileBase obstacleTile = obstaclesTilemap.GetTile(targetCell);
         if (obstacleTile != null)
         {
             Debug.Log("Obstacle at position: " + targetCell);
-            return false; 
+            return false;
         }
 
         TileBase tile = tilemap.GetTile(targetCell);
@@ -97,7 +97,6 @@ public class PlayerController : MonoBehaviour
             return false;
         }
 
-       
         return true;
     }
 }
