@@ -970,10 +970,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70aab3353a39e5c429a6504b100a7ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 1466902464}
+  unitName: {fileID: 1466902464}
   healthPoints: {fileID: 1872029870}
-  level: {fileID: 1989561356}
-  hpSlider: {fileID: 133199050}
+  unitLevel: {fileID: 1989561356}
+  healthSlider: {fileID: 133199050}
 --- !u!1 &700771891
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,7 +2206,6 @@ MonoBehaviour:
   playerHUD: {fileID: 1538316766}
   enemyHUD: {fileID: 634448283}
   dialogText: {fileID: 2077843829}
-  currentState: 0
 --- !u!4 &1490686383
 Transform:
   m_ObjectHideFlags: 0
@@ -2314,10 +2313,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70aab3353a39e5c429a6504b100a7ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nameText: {fileID: 83145514}
+  unitName: {fileID: 83145514}
   healthPoints: {fileID: 700771893}
-  level: {fileID: 871990059}
-  hpSlider: {fileID: 243434667}
+  unitLevel: {fileID: 871990059}
+  healthSlider: {fileID: 243434667}
 --- !u!1 &1811223307
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2696492634751049190}
   - component: {fileID: 5355630924771777016}
   m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Untagged
+  m_Name: ReverseCat
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

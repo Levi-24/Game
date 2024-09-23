@@ -1,27 +1,40 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
 public class BattleHud : MonoBehaviour
 {
-    public TextMeshProUGUI nameText;
-    public TextMeshProUGUI healthPoints;
-    public TextMeshProUGUI level;
-    public Slider hpSlider;
+    [SerializeField] TextMeshProUGUI unitName;        // Reference to the UI element displaying the unit's name.
+    [SerializeField] TextMeshProUGUI healthPoints;     // Reference to the UI element displaying the unit's health points.
+    [SerializeField] TextMeshProUGUI unitLevel;        // Reference to the UI element displaying the unit's level.
+    [SerializeField] Slider healthSlider;               // Reference to the health slider UI element.
 
+    // Method to set up the HUD with the unit's information.
     public void SetHUD(Unit unit)
     {
-        nameText.text = unit.unitName;
-        level.text = "Lvl " + unit.unitLevel;
+        // Set the unit's name in the HUD.
+        unitName.text = unit.unitName;
+
+        // Set the unit's level in the HUD.
+        unitLevel.text = "Lvl " + unit.unitLevel;
+
+        // Set the health points display in the HUD.
         healthPoints.text = "Hp: " + unit.currentHealth + "/" + unit.maxHealth;
-        hpSlider.maxValue = unit.maxHealth;
-        hpSlider.value = unit.currentHealth;
+
+        // Set the maximum value of the health slider to the unit's max health.
+        healthSlider.maxValue = unit.maxHealth;
+
+        // Set the current value of the health slider to the unit's current health.
+        healthSlider.value = unit.currentHealth;
     }
 
-    public void SetHP(int hp, Unit unit)
+    // Method to update the health bar when the unit takes damage or heals.
+    public void SetHpBar(Unit unit)
     {
-        hpSlider.value = hp;
+        // Update the health slider value to the unit's current health.
+        healthSlider.value = unit.currentHealth;
+
+        // Update the health points display to reflect the current and max health.
         healthPoints.text = "Hp: " + unit.currentHealth + "/" + unit.maxHealth;
     }
 }
