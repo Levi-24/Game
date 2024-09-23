@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -20,8 +19,9 @@ public class BattleHud : MonoBehaviour
         hpSlider.value = unit.currentHealth;
     }
 
-    public void SetHP(int hp)
+    public void SetHP(int hp, Unit unit)
     {
         hpSlider.value = hp;
+        healthPoints.text = "Hp: " + unit.currentHealth + "/" + unit.maxHealth;
     }
 }
